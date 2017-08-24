@@ -24,17 +24,17 @@
         self.modalCloseButtonDescription = self.modalChrome.querySelector('.access-modal-close-description');
         self.closeTriggerSelector = 'header .access-modal-close';
         self.zIndexStep = self.options.zIndexStep || 5;
-        //self.focusableElements = self.options.focusableElements || [
-        //    'a[href]:not([tabindex="-1"])',
-        //    'area[href]:not([tabindex="-1"])',
-        //    'input:not([disabled]):not([tabindex="-1"])',
-        //    'select:not([disabled]):not([tabindex="-1"])',
-        //    'textarea:not([disabled]):not([tabindex="-1"])',
-        //    'button:not([disabled]):not([tabindex="-1"])',
-        //    'iframe:not([tabindex="-1"])',
-        //    '[tabindex]:not([tabindex="-1"])',
-        //    '[contentEditable=true]:not([tabindex="-1"])'
-        //];
+        self.focusableElements = self.options.focusableElements || [
+            'a[href]:not([tabindex="-1"])',
+            'area[href]:not([tabindex="-1"])',
+            'input:not([disabled]):not([tabindex="-1"])',
+            'select:not([disabled]):not([tabindex="-1"])',
+            'textarea:not([disabled]):not([tabindex="-1"])',
+            'button:not([disabled]):not([tabindex="-1"])',
+            'iframe:not([tabindex="-1"])',
+            '[tabindex]:not([tabindex="-1"])',
+            '[contentEditable=true]:not([tabindex="-1"])'
+        ];
 
         //dynamic ids set by the instantiation, only 1 `id` per page with HTML rules
         self.titleId = self.options.id + '-title';
@@ -216,9 +216,8 @@
         self.modalContent.focus();
 
         //required: restrict focus
-        //var focusableElementsStr = self.focusableElements.join(',');
-        //[].forEach.call(document.querySelectorAll(focusableElementsStr), function (anyElement) {
-        [].forEach.call(document.querySelectorAll('*'), function (anyElement) {
+        var focusableElementsStr = self.focusableElements.join(',');
+        [].forEach.call(document.querySelectorAll(focusableElementsStr), function (anyElement) {
             anyElement.addEventListener('focus', self.myFocusFn);
         });
 
@@ -271,9 +270,8 @@
 
         //required: restore focusability on everything else
         if (self.myFocusFn !== null) {
-            //var focusableElementsStr = self.focusableElements.join(',');
-            //[].forEach.call(document.querySelectorAll(focusableElementsStr), function (anyElement) {
-            [].forEach.call(document.querySelectorAll('*'), function (anyElement) {
+            var focusableElementsStr = self.focusableElements.join(',');
+            [].forEach.call(document.querySelectorAll(focusableElementsStr), function (anyElement) {
                 anyElement.removeEventListener('focus', self.myFocusFn);
             });
             self.myFocusFn = null; //done with this listener, destroy it
