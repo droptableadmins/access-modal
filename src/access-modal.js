@@ -190,7 +190,7 @@
             //get the z-index of the modal I spawned from and increment that to appear above it
             var potentialLowerModal = self.notModalWrap.firstChild;
             if (self.isVisible(potentialLowerModal) && self.hasClass(potentialLowerModal, 'access-modal')) {
-                var newZ = self.getZIndex(potentialLowerModal) + 10;
+                var newZ = self.getZIndex(potentialLowerModal) + self.zIndexStep;
                 self.modalChrome.style.zIndex = newZ;
             }
         }
