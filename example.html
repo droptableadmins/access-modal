@@ -1,0 +1,90 @@
+<!DOCTYPE html><!--[if lt IE 9]><html class="no-js ie less-than-ie9" lang="en"><![endif]--><!--[if IE 9]><html class="no-js ie ie9" lang="en"><![endif]--><!--[if (gt IE 9)|!(IE)]><!--><html class="no-js greater-than-ie9-or-not-ie" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="HandheldFriendly" content="True"/>
+  <meta name="MobileOptimized" content="320"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="cleartype" content="on"/>
+  <title>Example Access Modal</title>
+  <style>
+    .main .container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1200px;
+    }
+    .access-modal-body-hidden {
+        overflow: hidden;
+    }
+    .access-modal {
+        bottom: 0;
+        display: none;
+        left: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1200;
+    }
+    .access-modal::before {
+        background-color: rgba(0, 0, 0, .4);
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <main role="main" class="main">
+    <div class="container">
+        <h1>Modal Example</h1>
+        <button id="button1">Open Modal</button>
+    </div>
+  </main>
+
+  <script id="example1-template" type="text/template">
+    <div class="access-modal">
+      <div role="document" class="access-modal-content">
+
+        <header class="access-modal-header">
+          <div class="access-modal-title"><%= title %></div>
+
+          <span class="access-modal-description"><%= description %></span>
+
+          <button aria-label="Close dialog button." class="access-modal-close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </header>
+
+        <span class="access-modal-close-description">To close this dialog, press escape or click the close dialog button.</span>
+        </div>
+
+        <div class="access-modal-body"></div>
+
+        <footer class="access-modal-footer"></footer>
+      </div>
+    </div>
+  </script>
+
+  <script id="example1-body" type="text/template">
+    <div>
+      <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+      <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+      <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
+      <button id="example1-default-action">Test Button</button>
+    </div>
+  </script>
+
+
+  <script src="src/lodash.min.js"></script>
+  <script src="src/access-modal.js"></script>
+  <script src="example/modal-example.js"></script>
+
+
+</body></html>

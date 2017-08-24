@@ -1,0 +1,19 @@
+{
+  "name": "access-modal",
+  "version": "1.0.0",
+  "description": "No dependency accessible modal",
+  "main": "src/access-modal.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lodash": "lodash exports=global include=template -p -o src/lodash.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@droptableadmins.github.com:droptableadmins/access-modal.git"
+  },
+  "author": "droptableadmins",
+  "license": "UNLICENSED"
+}
