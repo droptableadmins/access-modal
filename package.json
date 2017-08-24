@@ -1,7 +1,7 @@
 {
   "name": "access-modal",
   "version": "1.0.0",
-  "description": "No dependency accessible modal",
+  "description": "Low dependency accessible modal",
   "main": "src/access-modal.js",
   "directories": {
     "example": "example"
