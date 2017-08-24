@@ -72,9 +72,6 @@
         self.modalCloseButtonDescription.setAttribute('id', self.closeButtonDescriptionId);
         self.modalCloseButton.setAttribute('aria-describedby', self.closeButtonDescriptionId);
 
-        //window.addEventListener('unload', function destroyWaypointsModal () {
-        //});
-
         return self;
     }
 
