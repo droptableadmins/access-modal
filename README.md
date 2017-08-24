@@ -18,3 +18,5 @@
 ## Other Features
 - Support for modal within a modal
 - Example styles demonstrate hidden body overflow when modal is open; if modal content exceeds viewport height the scrollbar applies to the modal only
+- User defined callbacks for pre/post open and close events
+- Only third party dependency is Lodash’s template function - easily translated to other frameworks
