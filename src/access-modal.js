@@ -159,7 +159,7 @@
         //required: remember what had focus before opening modal
         self.modalChrome.lastFocusedElement = document.activeElement;
 
-        //append modalBodyHTML to insertion point within the modal chrome (only relevant for this implementation)
+        //append modalBodyHTML to insertion point within the modal chrome
         self.modalBody.appendChild(self.modalBodyHTML);
 
 
