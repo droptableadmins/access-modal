@@ -33,6 +33,18 @@
     }
     .access-modal-header {
         background-color: #D6D7D9;
+        padding: 8px;
+    }
+    .access-modal-header::after {
+        clear: both;
+        content: ' ';
+        display: block;
+    }
+    .access-modal-title {
+        float: left;
+    }
+    .access-modal-close {
+        float: right;
     }
     .access-modal-content {
         background-color: #fff;
@@ -40,6 +52,12 @@
         margin-right: auto;
         margin-top: 48px;
         max-width: 500px;
+    }
+    .access-modal-body {
+        padding: 16px;
+    }
+    .access-modal-body p:first-child {
+        margin-top: 0;
     }
     .access-modal::before {
         background-color: rgba(0, 0, 0, .4);
