@@ -104,17 +104,6 @@
         element.className = cn;
     };
 
-    //jQuery like nicety
-    AccessModal.prototype.outerHeight = function outerHeight (el, marginsToo) {
-        var self = this;
-        var calc;
-        calc = el.clientHeight;
-        if (!marginsToo) {
-            return calc;
-        }
-        return calc + self.computedStyle(el, 'margin-top') + self.computedStyle(el, 'margin-bottom');
-    };
-
     AccessModal.prototype.getZIndex = function getZIndex (el) {
         var self = this;
         var z = self.computedStyle(el, 'z-index');
