@@ -223,8 +223,10 @@
 
     AccessModal.prototype.callCustom = function (userFn) {
         var self = this;
+        var sliced = Array.prototype.slice.call(arguments, 1);
+
         if (self.options[userFn] !== undefined && typeof self.options[userFn] === 'function') {
-            self.options[userFn].call(self);
+            self.options[userFn].apply(self, sliced);
         }
     };
 
