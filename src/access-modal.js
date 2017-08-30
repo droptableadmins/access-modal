@@ -120,7 +120,7 @@
         var code = e.charCode || e.keyCode; //normalize char codes cross browser
         if (e.type === 'keydown' && code === 27) { //escape key
             if (self.modalChrome.parentNode === document.body) { //topmost modal only
-                self.close();
+                self.close('onKeyEvent');
             }
         }
     };
@@ -130,7 +130,7 @@
         var self = this;
         if ((e.type === 'click' || e.type === 'touch')) {
             e.stopPropagation(); //in case the event in on the icon <span> within the <button>, we don’t want to fire twice, so stop
-            self.close(); //pass the modal chrome element and the focus function to unbind
+            self.close('onModalClickEvent'); //pass the modal chrome element and the focus function to unbind
         }
     };
 
@@ -228,9 +228,9 @@
         }
     };
 
-    AccessModal.prototype.close = function close () {
+    AccessModal.prototype.close = function close (reason) {
         var self = this;
-        self.callCustom('beforeClose');
+        self.callCustom('beforeClose', reason);
 
         //required: move everything out of the aria-hidden wrapper back to the original positions in the body
         while (self.notModalWrap.childNodes.length) {
