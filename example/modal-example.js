@@ -5,8 +5,12 @@
         id: 'example1',
         title: 'Example Modal',
         description: 'Beginning of dialog window.',
-        template: 'example1-template',
-        modalBody: 'example1-body'
+        template: '#example1-template',
+        content: '#example1-body',
+        afterClose: function (reason) {
+            var modalInstance = this;
+            console.log('reason for closing is', reason);
+        }
     });
 
     document.getElementById('button1').addEventListener('click', function () {

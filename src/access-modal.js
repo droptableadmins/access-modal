@@ -8,8 +8,8 @@
         var parser = new DOMParser();
 
         //build the modal from a template, uses lodash’s template function
-        self.modalChrome = (parser).parseFromString(_.template(document.getElementById(self.options.template).text)(self.options), 'text/html').body.firstChild;
-        self.modalBodyHTML = (parser).parseFromString(_.template(document.getElementById(self.options.modalBody).text)(self.options), 'text/html').body.firstChild;
+        self.modalChrome = (parser).parseFromString(_.template(document.querySelector(self.options.template).text)(self.options), 'text/html').body.firstChild;
+        self.modalBodyHTML = (parser).parseFromString(_.template(document.querySelector(self.options.content).text)(self.options), 'text/html').body.firstChild;
 
         //named parts of the modal
         //content is the visible portion of the modal
@@ -280,7 +280,7 @@
         //required: destroy the modal chrome (remove from DOM)
         self.modalChrome.parentNode.removeChild(self.modalChrome);
 
-        self.callCustom('afterClose');
+        self.callCustom('afterClose', reason);
     };
 
     if (typeof define === 'function' && define.amd) { //jshint ignore:line
